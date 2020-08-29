@@ -80,11 +80,21 @@ let registerUsingPost = async () => {
 };
 
 let formdataPost = async () => {
-  const url = "";
+  const url = "http://localhost:3000/sample";
   const formData = new FormData();
   formData.append("k1", "v1");
 
   const response = await fetch(url, { method: "POST", body: formData });
+  const result = await response.json();
+  console.log(result);
+};
+
+let urlparmsPost1 = async () => {
+  const url = "http://localhost:3000/sample";
+  const urlParams = new URLSearchParams();
+  urlParams.append("title", "Hello World");
+
+  const response = await fetch(url, { method: "POST", body: urlParams });
   const result = await response.json();
   console.log(result);
 };
