@@ -78,3 +78,13 @@ let registerUsingPost = async () => {
   document.querySelector("#email").value = "";
   document.querySelector("#mobile").value = "";
 };
+
+let formdataPost = async () => {
+  const url = "";
+  const formData = new FormData();
+  formData.append("k1", "v1");
+
+  const response = await fetch(url, { method: "POST", body: formData });
+  const result = await response.json();
+  console.log(result);
+};
